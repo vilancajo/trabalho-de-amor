@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho de Micaela</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <style>
+       /* Custom CSS */
+       body {
+           font-family: Arial, sans-serif;
+           background-color: #f8f9fa;
+           color: #333;
+           margin: 0;
+           padding: 0;
+       }
+       .container {
+           max-width: 800px;
+           margin: 0 auto;
+           padding: 20px;
+       }
+       h1, h2 {
+           color: #007bff;
+       }
+       .icon {
+           margin-right: 10px;
+       }
+       .chat-box {
+           display: contents;
+           background-color: #fff;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+           padding: 20px;
+           margin-top: 20px;
+           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+       }
+       .chat-box h3 {
+           margin-top: 0;
+           color: #333;
+       }
+       .chat-messages {
+           max-height: 300px;
+           overflow-y: auto;
+           margin-bottom: 10px;
+       }
+       .chat-input {
+           width: calc(100% - 40px);
+           margin-right: 10px;
+           padding: 8px;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+           outline: none;
+       }
+       .send-btn {
+           padding: 8px 15px;
+           background-color: #007bff;
+           color: #fff;
+           border: none;
+           border-radius: 5px;
+           cursor: pointer;
+       }
+       .send-btn:hover {
+           background-color: #0056b3;
+       }
+       /* Footer */
+       footer {
+           background-color: #343a40;
+           color: #fff;
+           padding: 20px 0;
+           text-align: center;
+           position: relative;
+           bottom: 0;
+           width: 100%;
+       }
+       /* Carousel */
+       .carousel {
+           margin-top: 20px;
+       }
+       .carousel-item img {
+           max-height: 300px;
+           object-fit: cover;
+       }
+       /* Social Icons */
+       .social-icons a {
+           color: #fff;
+           font-size: 24px;
+           margin: 0 10px;
+           transition: transform 0.3s ease;
+       }
+       .social-icons a:hover {
+           color: #007bff;
+           transform: scale(1.2);
+       }
+       /* Animation */
+       @keyframes fadeInUp {
+           from {
+               opacity: 0;
+               transform: translateY(20px);
+           }
+           to {
+               opacity: 1;
+               transform: translateY(0);
+           }
+       }
+       .animated {
+           animation-duration: 1s;
+           animation-fill-mode: both;
+           animation-timing-function: ease-out;
+       }
+       .fade-in {
+           animation-name: fadeInUp;
+       }
+       /* Welcome Message */
+       .welcome-message {
+           background-color:black;
+           color: #fff;
+           padding: 20px;
+           text-align: center;
+           margin-bottom: 20px;
+           border-radius: 10px;
+           box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+       }
+       .welcome-message h1 {
+           font-size: 36px;
+           margin-bottom: 10px;
+       }
+       .welcome-message p {
+           font-size: 18px;
+       }
+       /* Page Title */
+       .page-title {
+           text-align: center;
+           margin-bottom: 40px;
+       }
+       .page-title h1 {
+           font-size: 48px;
+           color: #007bff;
+           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+       }
+       /* Media Queries */
+       @media (max-width: 576px) {
+           .container {
+               padding: 10px;
+           }
+           .chat-box {
+               padding: 10px;
+           }
+           .send-btn {
+               padding: 6px 12px;
+           }
+           .social-icons a {
+               font-size: 20px;
+           }
+           .welcome-message h1 {
+               font-size: 30px;
+           }
+           .welcome-message p {
+               font-size: 16px;
+           }
+           .page-title h1 {
+               font-size: 36px;
+           }
+       }
+       #bip{
+        font: normal 100px algerian;
+       }
+   </style>
+</head>
+<body>
+    <!-- Welcome Message -->
+    <div class="welcome-message">
+        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/mic.jpg" class="d-block w-25" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/8.jpg" class="d-block w-20" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/7.jpg" class="d-block w-20" alt="Image 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <h1 id="bip"><strong>BEM-VINDO AO</strong></h1>
+        <h1><strong style="color: deeppink;">Trabalho de Micaela</strong></h1>
+        <p>Meu amor Micaela este é espaço dedicado a informações sobre doenças causadas por bactérias, seus agentes, prevenção e manifestações no organismo.</p>
+    </div>
+    <div class="container animated fade-in">
+        <!-- Chat Box -->
+        <button id="open-chat" class="btn btn-primary">Iniciar Conversa</button>
+        <div id="chat" class="chat-box">
+            <h3>Chat com Micaela</h3>
+            <div id="chat-messages" class="chat-messages"></div>
+            <div class="input-group">
+                <input type="text" id="message-input" class="form-control chat-input" placeholder="Digite sua mensagem...">
+                <button id="send-message" class="btn btn-primary send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <!-- Content -->
+        <div class="page-title">
+            <h1>Doenças Causadas por Bactérias</h1>
+        </div>
+        <ul>
+            <li>Tuberculose</li>
+            <li>Pneumonia Bacteriana</li>
+            <li>Infecções do Trato Urinário</li>
+            <li>Gonorreia</li>
+            <li>Sífilis</li>
+            <li>Salmonelose</li>
+            <li>Doença de Lyme</li>
+            <li>Meningite Bacteriana</li>
+            <li>Febre Tifoide</li>
+            <li>Úlcera Gástrica causada por Helicobacter pylori</li>
+        </ul>
+        <h2 class="mt-5"><i class="fas fa-microscope icon"></i>AGENTE:</h2>
+        <ul>
+            <li><strong>Tuberculose:</strong> Mycobacterium tuberculosis</li>
+            <li><strong>Pneumonia Bacteriana:</strong> Streptococcus pneumoniae, Haemophilus influenzae, Staphylococcus aureus</li>
+            <li><strong>Infecções do Trato Urinário:</strong> Escherichia coli, Klebsiella pneumoniae, Proteus mirabilis</li>
+            <li><strong>Gonorreia:</strong> Neisseria gonorrhoeae</li>
+            <li><strong>Sífilis:</strong> Treponema pallidum</li>
+            <li><strong>Salmonelose:</strong> Salmonella spp. (por exemplo, Salmonella enterica)</li>
+            <li><strong>Doença de Lyme:</strong> Borrelia burgdorferi</li>
+            <li><strong>Meningite Bacteriana:</strong> Streptococcus pneumoniae, Neisseria meningitidis, Haemophilus influenzae</li>
+            <li><strong>Febre Tifoide:</strong> Salmonella enterica sorotipo Typhi</li>
+            <li><strong>Úlcera Gástrica causada por Helicobacter pylori:</strong> Helicobacter pylori</li>
+        </ul>
+        <h2 class="mt-5"><i class="fas fa-shield-alt icon"></i>COMO PODEMOS PREVENIR AS BACTÉRIAS:</h2>
+        <ul>
+            <li>Lavar as mãos regularmente com água e sabão.</li>
+            <li>Manter uma boa higiene pessoal.</li>
+            <li>Evitar o contato próximo com pessoas doentes.</li>
+            <li>Cobrir a boca e o nariz ao tossir ou espirrar.</li>
+            <li>Manter os ambientes limpos e higienizados, especialmente superfícies tocadas com frequência.</li>
+            <li>Cozinhar alimentos completamente e manter os alimentos refrigerados adequadamente.</li>
+            <li>Praticar sexo seguro para prevenir doenças sexualmente transmissíveis.</li>
+            <li>Tomar vacinas quando disponíveis e recomendadas para prevenir infecções bacterianas específicas.</li>
+            <li>Evitar o uso indiscriminado de antibióticos para ajudar a prevenir o desenvolvimento de resistência bacteriana.</li>
+            <li>Seguir as orientações e recomendações das autoridades de saúde pública.</li>
+        </ul>
+        <h2 class="mt-5">Manifestações das Bactérias no Organismo:</h2>
+        <ul>
+            <li><strong style="color: rgb(255, 0, 0);">Sintomas gerais:</strong> febre, calafrios, fadiga, dor de cabeça e dores musculares.</li>
+            <li><strong style="color: rgb(250, 12, 12);">Sintomas específicos:</strong> tosse, dor de garganta, dificuldade para respirar, dor ao urinar, frequência urinária aumentada, entre outros.</li>
+            <li><strong style="color: #ff0000;">Localização específica dos sintomas:</strong> erupções cutâneas, dor abdominal, inflamação, inchaço em uma área específica do corpo.</li>
+            <li><strong style="color: #ff0000;">Complicações:</strong> sepse, abscessos, meningite, pneumonia e outras condições potencialmente fatais se não tratadas adequadamente.</li>
+        </ul>
+    </div>
+    <!-- Footer -->
+    <footer class="animated fade-in">
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://wa.me/865400070" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/PAGE_NAME" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="mailto:EMAIL_ADDRESS"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2024 Trabalho de Micaela</p>
+        </div>
+    </footer>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+        // Firebase initialization
+        const firebaseConfig = {
+            apiKey: "AIzaSyD8XOHaLCzNLDrIlHG3em4g4gyYIKTLWpQ",
+            authDomain: "xitique-61310.firebaseapp.com",
+            databaseURL: "https://xitique-61310-default-rtdb.firebaseio.com",
+            projectId: "xitique-61310",
+            storageBucket: "xitique-61310.appspot.com",
+            messagingSenderId: "331274991404",
+            appId: "1:331274991404:web:2fec0eb082d3fe0b33de89",
+            measurementId: "G-DFDMBKW1RK"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // Initialize Firestore
+        const db = firebase.firestore();
+        // DOM Elements
+        const chatBox = document.getElementById('chat');
+        const openChatBtn = document.getElementById('open-chat');
+        const messageInput = document.getElementById('message-input');
+        const sendMessageBtn = document.getElementById('send-message');
+        const chatMessages = document.getElementById('chat-messages');
+        const userName = localStorage.getItem('userName');
+        // Hide chat initially
+        chatBox.style.display = 'none';
+        // Toggle Chat Box
+        openChatBtn.addEventListener('click', () => {
+            if (!userName) {
+                const name = prompt('Por favor, digite seu nome:');
+                if (name) {
+                    localStorage.setItem('userName', name);
+                    displayChatBox();
+                }
+            } else {
+                displayChatBox();
+            }
+        });
+        // Display chat box
+        function displayChatBox() {
+            openChatBtn.style.display = 'none';
+            chatBox.style.display = 'block';
+        }
+        // Send Message
+        sendMessageBtn.addEventListener('click', () => {
+            const name = localStorage.getItem('userName');
+            const messageText = messageInput.value.trim();
+            if (name && messageText !== '') {
+                // Save message to Firestore
+                db.collection('messages').add({
+                    name: name,
+                    text: messageText,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                })
+                .then(() => {
+                    // Clear input
+                    messageInput.value = '';
+                })
+                .catch((error) => {
+                    console.error("Error writing message: ", error);
+                });
+            }
+        });
+        // Real-time listener for chat messages
+        db.collection('messages').orderBy('timestamp').onSnapshot(snapshot => {
+            snapshot.docChanges().forEach(change => {
+                if (change.type === 'added') {
+                    const messageData = change.doc.data();
+                    const messageElement = document.createElement('p');
+                    if (messageData.name === userName) {
+                        // Display user's message in blue
+                        messageElement.innerHTML = `<span style="color: blue;">${messageData.name}:</span> ${messageData.text}`;
+                    } else {
+                        messageElement.textContent = `${messageData.name}: ${messageData.text}`;
+                    }
+                    chatMessages.appendChild(messageElement);
+                    chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
+                }
+            });
+        });
+        // Press Enter to Send Message
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessageBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
